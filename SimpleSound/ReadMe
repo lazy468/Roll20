@@ -1,0 +1,9 @@
+SimpleSound a Roll20 API audio script.
+
+ * 
+ *      Syntax:
+ * 
+ *      !splay [sound name] - play the named sound effect
+ *      !sstop [sound name] - stop the named sound effect
+ *      !swhisper - toggle the GM whisper status
+ * 
