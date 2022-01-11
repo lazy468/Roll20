@@ -25,13 +25,12 @@
  * 
  *      !splay [sound name] - play the named sound effect
  *      !sstop [sound name] - stop the named sound effect
+ *      !swhisper - toggle the GM whisper status
  * 
  */
 var simpleSound = simpleSound || (function(){
     'use strict';
 
-    var whispers = false; // Whisper confirmation of stop/play to GM
-    
     var playSound = function(trackname, action) {
         var track = findObjs({type: 'jukeboxtrack', title: trackname})[0];
         if(track) {
@@ -49,6 +48,8 @@ var simpleSound = simpleSound || (function(){
 
 	handleInput = function(msg) {
     
+        var whispers = state.simpleSound.whisper;
+        
 		if ( "api" !== msg.type ) {
 			return;
 		}
@@ -71,15 +72,20 @@ var simpleSound = simpleSound || (function(){
         else if(msg.content.indexOf("!sstop") !== -1) {
             var args = ["!sstop", msg.content.replace('!sstop','').trim()]        
         }
+        else if(msg.content.indexOf("!swhisper") !== -1) {
+            var args = ["!swhisper"]        
+        }
         else {
             return;
         }
 		
+		if (! state.simpleSound.whisper){state.simpleSound.whisper = false;}
+
 		switch(args[0]) {
 			case '!splay': {
                 var track_name = args[1] || 0;
                 if(track_name) {
-    				if(whispers){ sendChat('Simple Sound Script', '/w gm Playing ' + track_name); }
+    				if(whispers){ sendChat('Simple Sound Script', '/w gm <b>[PLAYING]</b> ' + track_name); }
     				playSound(track_name,'play');
                 }
                 else {
@@ -90,7 +96,7 @@ var simpleSound = simpleSound || (function(){
 			case '!sstop': {
 			    var track_name = args[1] || 0;
                 if(track_name) {
-    				if(whispers){ sendChat('Simple Sound Script', '/w gm Stopping ' + track_name); }
+    				if(whispers){ sendChat('Simple Sound Script', '/w gm <b>[STOPPING]</b> ' + track_name); }
     				playSound(track_name,'stop');
                 }
                 else {
@@ -98,18 +104,32 @@ var simpleSound = simpleSound || (function(){
                 }
 				break;
 			}
+			case '!swhisper': {
+                if(state.simpleSound.whisper == true) {
+    				state.simpleSound.whisper = false;
+                }
+                else {
+                    state.simpleSound.whisper = true;
+                }
+                var whispers = state.simpleSound.whisper;
+                    sendChat('Simple Sound Script', '/w gm Whispers are set to ( <b>' + whispers + '</b> )');
+				break;
+			}
 	  }
 	},
 	
 	checkInstall = function()
 	{
-	    var script_version = "0.1.0";
+	    var script_version = "0.2.0";
         if( ! state.simpleSound ) {
                 state.simpleSound = {
                     version: script_version,
+                    whisper: false,
                 };
-            }    
-        
+            }   
+            
+		if (! state.simpleSound.whisper){state.simpleSound.whisper = false;}
+		
         if (state.simpleSound.version != script_version)
             state.simpleSound.version = script_version;
             
