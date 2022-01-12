@@ -1,3 +1,7 @@
+Purpose
+
+This is a simple script I wrote for my campaign because I didn't like showing actual health-bars with numbers so instead as a tokens HP changes it will add a colored status marker to the token indicating it's general health; starting with green down to red and when they drop below 1 it marks them with the death X marker.
+
 Commands
 
 !hs - when used without a selection it will toggle the mod functionality ON or OFF and display this as a whisper in chat.
