@@ -25,7 +25,15 @@
  * 
  *      !splay [sound name] - play the named sound effect
  *      !sstop [sound name] - stop the named sound effect
- *      !swhisper - toggle the GM whisper status
+ *      1sstop - stop all tracks currently playing
+ * 
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * 
+ * Revison History:
+ * 
+ * 0.1.0 - Original Script
+ * 0.2.0 - Added the !swhisper command to endable/disable whispers via command
+ * 0.2.1 - Modified !sstop to stop all tracks with no variable
  * 
  */
 var simpleSound = simpleSound || (function(){
@@ -43,6 +51,15 @@ var simpleSound = simpleSound || (function(){
         else {
             sendChat('Simple Sound Script', '/w gm No Track Found...');
             log("No track found "+trackname);
+        }
+    },
+
+    stopAllSounds = function() {
+        var tracks = findObjs({type: 'jukeboxtrack', playing: true});
+        if(tracks) {
+            _.each(tracks, function(sound) {
+                sound.set('playing', false);
+            });
         }
     },
 
@@ -73,7 +90,7 @@ var simpleSound = simpleSound || (function(){
             var args = ["!sstop", msg.content.replace('!sstop','').trim()]        
         }
         else if(msg.content.indexOf("!swhisper") !== -1) {
-            var args = ["!swhisper"]        
+            var args = ["!swhisper".trim()]        
         }
         else {
             return;
@@ -100,7 +117,8 @@ var simpleSound = simpleSound || (function(){
     				playSound(track_name,'stop');
                 }
                 else {
-                    sendChat('Simple Sound Script', '/w gm Syntax: !sstop [track name]');
+                    if(whispers){ sendChat('Simple Sound Script', '/w gm <b>[STOPPING ALL TRACKS]</b>'); }
+                    stopAllSounds();
                 }
 				break;
 			}
@@ -120,7 +138,7 @@ var simpleSound = simpleSound || (function(){
 	
 	checkInstall = function()
 	{
-	    var script_version = "0.2.0";
+	    var script_version = "0.2.1";
         if( ! state.simpleSound ) {
                 state.simpleSound = {
                     version: script_version,
