@@ -26,7 +26,7 @@
  *      !splay [sound name] - play the named sound effect
  *      !sstop [sound name] - stop the named sound effect
  *      !swhisper - toggle the GM whisper status
- *      1sstop - stop all tracks currently playing
+ *      !sstop - stop all tracks currently playing
  * 
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * 
