@@ -24,7 +24,7 @@
   <li>--note:message</li>
   <li>--halt</li>
   <li>--move:dir:dis</li>
-  </ul><br>
+  </ul>
   
   <ul>
     <lh>Text Replacers</lh>
@@ -33,8 +33,8 @@
     <li>LAST_ROLL - Replaces with the value of the last check/save roll</li>
     <li>LAST_DC - Replaces with the value of the last DC check/save</li>
     <li>LAST_BONUS - Replaces with the last bonus check/save</li>
-  </ul><br>
-  Because lines not marked with double dash (--) are directly output to game chace you can use replacers to do things like send whispers to specific players or even trigger other mod commands such as...
+  </ul>
+  Because lines not marked with double dash (--) are directly output to game chace you can use replacers to do things like send whispers to specific players or even trigger other mod commands such as...<br>
   <ul>
   <li>/w VICTIM_NAME You notice a trap! - will whisper the user who triggered the action</li>
   <li>!someAPI VICTIM_ID - would trigger another api with the ID of the triggering token</li>
