@@ -1,7 +1,9 @@
 <table cellpadding='0'><tbody>
 <tr><td><h2>Dungeon Trigger</h2></td></tr>
 <tr><td><strong>What this script does.</span></strong></td></tr>
-<tr><td>Dungeon Trigger allows you to take an object on the GM layer and aftering appending <b>_trig</b> to the object name you can add commands in the GM notes section and flags on the object itself to manipulate how it interacts with tokens that step on or move through it. Once a trigger is activated it essentially runs through the GM notes section line by line either running the command or outputting the text in chat, commands are prefaced with a double dash (--). Commands can be run to do things like generate FX on the trigger, play a sound, ping the map etc. Each command should be entered on it's own line, any command that does not begin with a double dash (--) will be output to chat exactly as written, which means you can use this feature to trigger other mods commands. The following is a short description of each command native to Dungeon Trigger. You can access this help in the script with <b>!dt</b>.<br><br>
+<tr><td><p>Dungeon Trigger allows you to take an object on the GM layer and aftering appending <b>_trig</b> to the object name you can add commands in the GM notes section and flags on the object itself to manipulate how it interacts with tokens that step on or move through it.</p>
+<p>Once a trigger is activated it essentially runs through the GM notes section line by line either running the command or outputting the text in chat, commands are prefaced with a double dash (--). Commands can be run to do things like generate FX on the trigger, play a sound, ping the map etc. Each command should be entered on it's own line, any command that does not begin with a double dash (--) will be output to chat exactly as written, which means you can use this feature to trigger other mods commands.</p>
+<p>The following is a short description of each command native to Dungeon Trigger. You can access this help in the script with <b>!dt</b>.</p><br>
   
   <ul>
   <lh>Conditional Checks</lh>
