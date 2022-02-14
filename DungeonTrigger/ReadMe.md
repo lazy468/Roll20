@@ -24,7 +24,8 @@ When a trigger is activated the default run state is TRUE until it encounters a 
 <br>
   <ul>
   <lh>Action Commands</lh>
-  <li>--play:trackname</li>
+  <li><a href='#play'>--play:trackname</a></li>
+    <ul><li>Plays a sound with the specified track name.</li></ul>
   <li>--fx:style-type:direction</li>
   <li>--ping</li>
   <li>--delay:seconds</li>
@@ -130,4 +131,8 @@ Here are some examples:<br />
 Forces the run state of the trigger back to TRUE allowing all further commands to be executed as normal. This can be useful if you have a condition block but you also want additional commands to run either way.<br>
 </td></tr>
 
+<tr><td><strong><h3 id='play'>PLAY</h3></strong></td></tr>
+<tr><td>
+  <b><code>--play:[track_name]</code></b><br><br>You can use the <code>--play</code> command to play a sound / track from your library. You must specify the exact track name. An example would be...<code><strong>--play:pit_trap </strong></code>which would play the sound by the name pit_trap from your audio library.<br>
+</td></tr>
 </table>
