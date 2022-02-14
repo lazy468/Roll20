@@ -185,7 +185,7 @@ You can use the <b>--ping</b> command to ping the trigger location for all playe
 <tr><td><strong><h3 id='door'>DOOR</h3></strong><a href='#top'>back to top</a></td></tr>
 <tr><td>
 <b><code>--door:[path_id]</code></b>
-<br>
+<br><br>
 <p>You can use the <code>--door</code> command to toggle a path object between the dynamic lighting and GM layer. The path will be toggeled to the opposite layer each time the <code>--door</code> command is triggered.</p>
 <p>You must supply the ID of the path object in the door command, you can find this by using the command <code>!dt --id</code> while you have the path selected.</p>
 <p>This is useful for automatically opening dynamic lighting areas to players or marking the trigger with a padlock icon to allow players to activate it themselves with the <code>!dt --activate</code> command. I like to make an "Action" macro for my players with the command in it.</p>
