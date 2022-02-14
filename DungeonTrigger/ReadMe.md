@@ -38,6 +38,7 @@ When a trigger is activated the default run state is TRUE until it encounters a 
   <li><a href='#door'>--door:[path_id]</a></li>
     <ul><li>Toggles a path segment between the Light & GM layers to simulate opening a door.</li></ul>
   <li><a href='#setstatus'>--setstatus:[status_name]:[id]</a></li>
+    <ul><li>Set/Remove status markers from triggering or specified tokens.</li></ul>
   <li>--disable</li>
   <li>--gmlayer</li>
   <li>--note:message</li>
