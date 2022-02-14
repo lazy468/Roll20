@@ -26,7 +26,8 @@ When a trigger is activated the default run state is TRUE until it encounters a 
   <lh>Action Commands</lh>
   <li><a href='#play'>--play:trackname</a></li>
     <ul><li>Plays a sound with the specified track name.</li></ul>
-  <li>--fx:style-type:direction</li>
+  <li><a href='#fx'>--fx:style-type:direction</a></li>
+    <ul><li>Displays an effect (or custom effect) when triggered.</li></ul>
   <li>--ping</li>
   <li>--delay:seconds</li>
   <li>--door:path_id</li>
@@ -133,8 +134,29 @@ Forces the run state of the trigger back to TRUE allowing all further commands t
 
 <tr><td><strong><h3 id='play'>PLAY</h3></strong><a href='#top'>back to top</a></td></tr>
 <tr><td>
-  <b><code>--play:[track_name]</code></b><br><br>You can use the <code>--play</code> command to play a sound / track from your library. You must specify the exact track name. 
+  <b><code>--play:[track_name]</code></b><br><br>You can use the <code>--play</code> command to play a sound / track from your library. You must specify the exact track name.<br>
+<br>
   Here are some examples:<br />
   <code><strong>--play:pit_trap </strong></code>which would play the sound by the name pit_trap from your audio library.<br>
 </td></tr>
+
+<tr><td><strong><h3 id='fx'>FX</h3></strong><a href='#top'>back to top</a></td></tr>
+<tr><td>
+<b><code>--fx:[style-type]:[direction]</code></b>
+<br>
+<br>
+Play FX at the point of the trigger, you may play custom FX as well. The format of the command is as follows...
+<br>
+<br>
+<code><strong>--fx:style-type:direction</strong></code>
+<br>
+Direction is optional, if it's an effect with 2 points then enter it as a compass direction of N S E W or NE SW etc. Custom effects are entered as the exact name of the custom FX.
+<br>
+<br>
+Here are some examples:<br />
+<code><strong>--fx:breath-fire:N</strong></code> - Fire Breath North<br>
+<code><strong>--fx:custom_lightning:NE</strong></code> - Your 'custom_lightning' effect NE<br>
+<code><strong>--fx:nova-charm</strong></code> - Nova effect (purple) charm<br>
+</td></tr>  
+  
 </table>
