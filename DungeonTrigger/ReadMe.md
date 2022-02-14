@@ -1,5 +1,26 @@
 <table cellpadding='0'><tbody>
 <tr><td><h2>Dungeon Trigger</h2></td></tr>
+<tr><td><strong><span style='color: blue;'>What this script does.</span></strong><hr style='border: 1px dashed #000; width: 50%  margin: auto; margin-top: 5%; margin-bottom: 5%;'>
+<tr><td>Dungeon Trigger allows you to take an object on the GM layer and aftering appending <b>_trig</b> to the object name you can add commands in the GM notes section and flags on the object itself to manipulate how it interacts with tokens that step on or move through it. It has a number of its own commands you can run to do things like generate FX on the trigger, play a sound, ping the map etc. Each command should be entered on it's own line, any command that does not begin with a double dash (--) will be output to chat exactly as written. The following is a short description of each command native to Dungeon Trigger. You can access this help in the script with <b>!dt</b>.<br><br>
+  <ul>
+  <li>--check</li>
+  <li>--save</li>
+  <li>--save:stat:dc:show</li>
+  <li>--key:icon-name</li>
+  <li>--else</li>
+  <li>--end</li>
+  <li>--play:trackname</li>
+  <li>--fx:style-type:direction</li>
+  <li>--ping</li>
+  <li>--delay:seconds</li>
+  <li>--door:path_id</li>
+  <li>--setstatus:status_name:ID</li>
+  <li>--disable</li>
+  <li>--gmlayer</li>
+  <li>--note:message</li>
+  <li>--halt</li>
+  <li>--move:dir:dis</li>
+  </ul><br></td></tr>
 <tr><td>Commands:<br><ul><li>!dt - displays the command help menu</li><li>!dt --id - returns the ID of the selected object in chat</li><li>!dt --activate - used for activating a trigger marked as manual with the padlock icon, triggered from a token overlapping the trigger</li></ul></td></tr>
 <tr><td><strong><span style='color: blue;'>Creating a Trigger</span></strong><hr style='border: 1px dashed #000; width: 50%  margin: auto; margin-top: 5%; margin-bottom: 5%;'></td></tr>
 <tr><td>Place an object on the GM layer and post tag it with <span style='color: green;'><strong>_trig</strong></span>, for example door_trig would be a valid name.<br></td></tr>
@@ -13,6 +34,5 @@
 <tr><td>Placing an Interdiction Icon <img src='https://s3.amazonaws.com/files.d20.io/images/8074185/cyt6rWIaUiMvq-4CnpskZQ/thumb.png?1425598647' /> on a trigger token will disable it. Also using the <span style='color: #000080;'><strong>--disable</strong></span> command inside a trigger will automatically mark the trigger disabled after it's run successfully.<br></td></tr>
 <tr><td><strong><span style='color: blue;'>Flying Tokens</span></strong><hr style='border: 1px dashed #000; width: 50%  margin: auto; margin-top: 5%; margin-bottom: 5%;'></td></tr>
 <tr><td>If you mark a trigger with the wing status marker <img src='https://game-icons.net/icons/ffffff/000000/1x1/lorc/fluffy-wing.png' alt='fluffy-wing' width='20' height='20' /> then any token also marked with the wing status marker will be ignored by the trigger.<br></td></tr>
-<tr><td><strong><span style='color: blue;'>COMMANDS OVERVIEW</span></strong><hr style='border: 1px dashed #000; width: 50%  margin: auto; margin-top: 5%; margin-bottom: 5%;'></td></tr>
-<tr><td>Dungeon Trigger has a number of its own commands you can run to do things like generate FX on the trigger, play a sound, ping the map etc. Each command should be entered on it's own line, any command that does not begin with a double dash will be output to chat exactly as written. The following is a short description of each command native to Dungeon Trigger. Click on a command below for more details on each.<br><br><ul><li><span style='color: blue;'>[--check:skill:dc:show](!dt --help-check-save)</span></li><li><span style='color: blue;'>[--save:stat:dc:show](!dt --help-check-save)</span> </li><li><span style='color: blue;'>[--key:icon-name](!dt --help-key)</span></li><li><span style='color: blue;'>[--else](!dt --help-else)</span></li><li><span style='color: blue;'>[--end](!dt --help-end)</span></li><li><span style='color: blue;'>[--play:trackname](!dt --help-play)</span></li><li><span style='color: blue;'>[--fx:style-type:direction](!dt --help-fx)</span></li><li><span style='color: blue;'>[--ping](!dt --help-ping)</span></li><li><span style='color: blue;'>[--delay:seconds](!dt --help-delay)</span></li><li><span style='color: blue;'>[--door:path_id](!dt --help-door)</span></li><li><span style='color: blue;'>[--setstatus:status_name:ID](!dt --help-setstatus)</span></li><li><span style='color: blue;'>[--disable](!dt --help-disable)</span></li><li><span style='color: blue;'>[--gmlayer](!dt --help-gmlayer)</span></li><li><span style='color: blue;'>[--note:message](!dt --help-note)</span></li><li><span style='color: blue;'>[--halt](!dt --help-halt)</span></li><li><span style='color: blue;'>[--move:dir:dis](!dt --help-move)</span></li></ul><br></td></tr>
+</td></tr>
 </tbody></table>
