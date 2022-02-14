@@ -2,19 +2,24 @@
 <tr><td><h2>Dungeon Trigger</h2></td></tr>
 <tr><td><strong>What this script does.</span></strong></td></tr>
 <tr><td><p>Dungeon Trigger allows you to take an object on the GM layer and aftering appending <b>_trig</b> to the object name you can add commands in the GM notes section and flags on the object itself to manipulate how it interacts with tokens that step on or move through it.</p>
-<p>Once a trigger is activated it essentially runs through the GM notes section line by line either running the command or outputting the text in chat, commands are prefaced with a double dash (--). Commands can be run to do things like generate FX on the trigger, play a sound, ping the map etc. Each command should be entered on it's own line, any command that does not begin with a double dash (--) will be output to chat exactly as written, which means you can use this feature to trigger other mods commands.</p>
+<p>Once a trigger is activated it essentially runs through the GM notes section line by line either running the command or outputting the text in chat, commands are prefaced with a double dash (--). Commands can be run to do things like generate FX on the trigger, play a sound, ping the map etc. Each command should be entered on it's own line, any command that does not begin with a double dash (--) will be output to chat exactly as written, which means you can use this feature to trigger other mods commands giving you an almost unlimited variety of combinations that you can do with triggers.</p>
 <p>The following is a short description of each command native to Dungeon Trigger. You can access this help in the script with <b>!dt</b>.</p><br>
   
   <ul>
   <lh>Conditional Checks</lh>
   <li><a href='#check/save'>--check:skill_abbreviation:dc:show</a></li>
+    <ul><li>Rolls a skill check for the triggering token to determin if the following commands will be run</li></ul>
   <li><a href='#check/save'>--save:stat:dc:show</a></li>
+    <ul><li>Rolls a save for the triggering token to determin if the following commands will be run</li></ul>
   <li><a href='#key'>--key:icon-name</a></li>
+    <ul><li>Checks if the token has the designated icon status before running</li></ul>
   <li><a href='#else'>--else</a></li>
+    <ul><li>Swaps the current run state to the opposite of what it currently is.</li></ul>
   <li><a href='#end'>--end</a></li>
+    <ul><li>Set the current run state to TRUE</li></ul>
   </ul>
-<h4>How Conditions Work...</h4>
-When a trigger is activated the default executions state is TRUE until it encounters a conditional command which sets the state to FALSE, such as failing a check or not meeting the requirements for KEY. Each line can change depending on the command for example if a check was failed but the <code>--else</code> command is encountered it will filp flop the run state to the opposite which is now TRUE again. You can always use the <code>--end</code> command to set the state back to TRUE.
+<h4>Conditional Checks & Run State...</h4>
+When a trigger is activated the default run state is TRUE until it encounters a conditional command which sets the state to FALSE, such as failing a check or not meeting the requirements for KEY. Each line can change depending on the command for example if a check was failed but the <code>--else</code> command is encountered it will filp flop the run state to the opposite which is now TRUE again. You can always use the <code>--end</code> command to set the state back to TRUE.
 <br>
 <br>
   <ul>
@@ -46,11 +51,11 @@ When a trigger is activated the default executions state is TRUE until it encoun
   <li>!someAPI VICTIM_ID - would trigger another api with the ID of the triggering token</li>
   </ul>
   </td></tr>
-<tr><td>Commands:<br><ul><li>!dt - displays the command help menu</li><li>!dt --id - returns the ID of the selected object in chat</li><li>!dt --activate - used for activating a trigger marked as manual with the padlock icon, triggered from a token overlapping the trigger</li></ul></td></tr>
+<tr><td>Chat Commands:<br><ul><li>!dt - displays the command help menu</li><li>!dt --id - returns the ID of the selected object in chat</li><li>!dt --activate - used for activating a trigger marked as manual with the padlock icon, triggered from a token overlapping the trigger</li></ul></td></tr>
 <tr><td><strong><span style='color: blue;'>Creating a Trigger</span></strong></td></tr>
 <tr><td>Place an object on the GM layer and post tag it with <span style='color: green;'><strong>_trig</strong></span>, for example door_trig would be a valid name.<br></td></tr>
-<tr><td><strong><span style='color: blue;'>Trigger Actions</span></strong></td></tr>
-<tr><td>In the GM Notes section of the trigger you may type any number of commands each on their own line. All Dungeon Trigger specific commands being with a double dash -- however you may use commands for other API mods as well and these will be output to chat. You can insert <span style='color: red;'><strong>VICTIM_ID</strong></span> into the line which will be replaced with the ID of the token who stepped on the trigger and inserting <span style='color: red;'><strong>VICTIM_NAME</strong></span> into the line will replace it with the tokens name. The insert tags can be useful when you need to send the player ID or name to another mod or you can use them in normal commands, for example you could use <span style='color: #000080;'><strong>/w VICTIM_NAME You notice a trap!</strong></span> to whisper only the player who steps on the trigger.<br> You can also insert the variables of the last check or save with <span style='color: red;'><strong>LAST_ROLL</strong></span>, <span style='color: red;'><strong>LAST_BONUS</strong></span>, or <span style='color: red;'><strong>LAST_DC</strong></span> which will output the corrosponding values for the last check or save that was rolled.</td></tr>
+<tr><td><strong>Trigger Actions</strong></td></tr>
+<tr><td>In the GM Notes section of the trigger you may type any number of commands each on their own line. All Dungeon Trigger specific commands being with a double dash -- however you may use commands for other API mods as well and these will be output to chat. You can insert <code><strong>VICTIM_ID</strong></code> into the line which will be replaced with the ID of the token who stepped on the trigger and inserting <span style='color: red;'><strong>VICTIM_NAME</strong></span> into the line will replace it with the tokens name. The insert tags can be useful when you need to send the player ID or name to another mod or you can use them in normal commands, for example you could use <span style='color: #000080;'><strong>/w VICTIM_NAME You notice a trap!</strong></span> to whisper only the player who steps on the trigger.<br> You can also insert the variables of the last check or save with <span style='color: red;'><strong>LAST_ROLL</strong></span>, <span style='color: red;'><strong>LAST_BONUS</strong></span>, or <span style='color: red;'><strong>LAST_DC</strong></span> which will output the corrosponding values for the last check or save that was rolled.</td></tr>
 <tr><td><strong><span style='color: blue;'>Activating a Trigger</span></strong></td></tr>
 <tr><td>Any token pathing across the square a trigger occupies will cause it to run the code in the GM Notes section. If you want the trigger to activate only if a token lands directly on it flag the trigger with the Boot Icon <img src='https://game-icons.net/icons/ffffff/000000/1x1/lorc/tread.png' alt='Boot' width='20' height='20' />.<br></td></tr>
 <tr><td><strong><span style='color: blue;'>Manual Activation</span></strong></td></tr>
@@ -67,9 +72,9 @@ When a trigger is activated the default executions state is TRUE until it encoun
 <tr><td><h2>Command Details</h2></td></tr>
   <tr><td>
   <tr><td><strong><h3 id='check/save'>CHECK / SAVE</h3></strong></td></tr>
-  <tr><td><b><code><span style='color: #903;'>--check:[skill/stat]:[DC]:show</span></code></b>
+  <tr><td><b><code>--check:[skill/stat]:[DC]:show</code></b>
     <br>
-    <b><code><span style='color: #903;'>--save:[stat]:[DC]:show</span></code></b>
+    <b><code>--save:[stat]:[DC]:show</code></b>
     <br>
     <br>
     You can create conditions under which your commands will execute using --check, --save, or --key commands. A check can use any of the following to pull the bonus from the triggering characters stat block and roll against the set DC. Its important to note that the conditional code after a --check command triggers on a check success where a --save triggers on a failure. Typically checks and saves are hidden and only shown to the GM however if you append <span style='color: #800000;'><strong>:show</strong></span> at the end the command the roll will be shown in public chat when the condition would trigger.
