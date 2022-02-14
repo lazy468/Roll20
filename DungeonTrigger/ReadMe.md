@@ -1,5 +1,5 @@
 <table cellpadding='0'><tbody>
-<tr><td><h2>Dungeon Trigger</h2></td></tr>
+<tr><td><h2 id='top'>Dungeon Trigger</h2></td></tr>
 <tr><td><strong>What this script does.</span></strong></td></tr>
 <tr><td><p>Dungeon Trigger allows you to take an object on the GM layer and aftering appending <b>_trig</b> to the object name you can add commands in the GM notes section and flags on the object itself to manipulate how it interacts with tokens that step on or move through it.</p>
 <p>Once a trigger is activated it essentially runs through the GM notes section line by line either running the command or outputting the text in chat, commands are prefaced with a double dash (--). Commands can be run to do things like generate FX on the trigger, play a sound, ping the map etc. Each command should be entered on it's own line, any command that does not begin with a double dash (--) will be output to chat exactly as written, which means you can use this feature to trigger other mods commands giving you an almost unlimited variety of combinations that you can do with triggers.</p>
@@ -72,7 +72,7 @@ When a trigger is activated the default run state is TRUE until it encounters a 
 <table cellpadding='0'><tbody>
 <tr><td><h2>Command Details</h2></td></tr>
   <tr><td>
-  <tr><td><strong><h3 id='check/save'>CHECK / SAVE</h3></strong></td></tr>
+  <tr><td><strong><h3 id='check/save'>CHECK / SAVE</h3></strong><a href='#top'>back to top</a></td></tr>
   <tr><td><b><code>--check:[skill/stat]:[DC]:show</code></b>
     <br>
     <b><code>--save:[stat]:[DC]:show</code></b>
@@ -99,7 +99,7 @@ When a trigger is activated the default run state is TRUE until it encounters a 
 <br>
 </td></tr>
 
-<tr><td><strong><h3 id='key'>KEY</h3></strong></td></tr>
+<tr><td><strong><h3 id='key'>KEY</h3></strong><a href='#top'>back to top</a></td></tr>
 <tr><td>
 <b><code>--key:[icon_name]</span></code></b><br><br>You can use the --key command to designate the trigger target must have the selected status marker to activate.
 <br>
@@ -111,7 +111,7 @@ Some examples of icon names are red, blue, green, brown, purple, pink, yellow, d
 </td></tr>
 
 
-<tr><td><strong><h3 id='else'>ELSE</h3></strong></td></tr>
+<tr><td><strong><h3 id='else'>ELSE</h3></strong><a href='#top'>back to top</a></td></tr>
 <tr><td>
 <b><code>--else</code></b>
 <br>
@@ -123,7 +123,7 @@ Here are some examples:<br />
 <strong>--check:perception:17:show</strong><br /><em>Commands here run on a 17 or better perception check and the players will see the roll because of the :show tag</em><br /><strong>--else</strong><br /><em>Commands here run on 16 or lower perception check, only the GM will see the roll.</em><br /><strong>--end</strong><br /><em>Commands here will run either way</em><br>
 </td></tr>
 
-<tr><td><strong><h3 id='end'>END</h3></strong></td></tr>
+<tr><td><strong><h3 id='end'>END</h3></strong><a href='#top'>back to top</a></td></tr>
 <tr><td>
 <b><code>--end</code></b>
 <br>
@@ -131,7 +131,7 @@ Here are some examples:<br />
 Forces the run state of the trigger back to TRUE allowing all further commands to be executed as normal. This can be useful if you have a condition block but you also want additional commands to run either way.<br>
 </td></tr>
 
-<tr><td><strong><h3 id='play'>PLAY</h3></strong></td></tr>
+<tr><td><strong><h3 id='play'>PLAY</h3></strong><a href='#top'>back to top</a></td></tr>
 <tr><td>
   <b><code>--play:[track_name]</code></b><br><br>You can use the <code>--play</code> command to play a sound / track from your library. You must specify the exact track name. An example would be...<code><strong>--play:pit_trap </strong></code>which would play the sound by the name pit_trap from your audio library.<br>
 </td></tr>
