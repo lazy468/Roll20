@@ -31,7 +31,8 @@ When a trigger is activated the default run state is TRUE until it encounters a 
     <ul><li>Plays a sound with the specified track name.</li></ul>
   <li><a href='#fx'>--fx:[style-type]:[direction]</a></li>
     <ul><li>Displays an effect (or custom effect) when triggered.</li></ul>
-  <li>--ping</li>
+  <li><a href='#ping'>--ping</a></li>
+    <ul><li>Pings the map at the trigger location for all players.</li></ul>
   <li>--delay:seconds</li>
   <li>--door:path_id</li>
   <li>--setstatus:status_name:ID</li>
@@ -161,5 +162,10 @@ Here are some examples:<br />
 <code><strong>--fx:custom_lightning:NE</strong></code> - Your 'custom_lightning' effect NE<br>
 <code><strong>--fx:nova-charm</strong></code> - Nova effect (purple) charm<br>
 </td></tr>  
-  
+
+<tr><td><strong><h3 id='ping'>PING</h3></strong><a href='#top'>back to top</a></td></tr>
+<tr><td>
+<b><code>--ping</code></b><br>You can use the <b>--ping</b> command to ping the trigger location for all players to see.<br>
+</td></tr>
+
 </table>
