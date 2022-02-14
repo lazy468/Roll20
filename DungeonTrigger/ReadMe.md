@@ -1,16 +1,20 @@
 <table cellpadding='0'><tbody>
 <tr><td><h2>Dungeon Trigger</h2></td></tr>
 <tr><td><strong>What this script does.</span></strong></td></tr>
-<tr><td>Dungeon Trigger allows you to take an object on the GM layer and aftering appending <b>_trig</b> to the object name you can add commands in the GM notes section and flags on the object itself to manipulate how it interacts with tokens that step on or move through it. Once a trigger is activated it essentially runs through the GM notes section line by line either running the command or outputting the text in chat, commands are prefaced with a double dash (--). It has a number of its own commands you can run to do things like generate FX on the trigger, play a sound, ping the map etc. Each command should be entered on it's own line, any command that does not begin with a double dash (--) will be output to chat exactly as written. The following is a short description of each command native to Dungeon Trigger. You can access this help in the script with <b>!dt</b>.<br><br> 
+<tr><td>Dungeon Trigger allows you to take an object on the GM layer and aftering appending <b>_trig</b> to the object name you can add commands in the GM notes section and flags on the object itself to manipulate how it interacts with tokens that step on or move through it. Once a trigger is activated it essentially runs through the GM notes section line by line either running the command or outputting the text in chat, commands are prefaced with a double dash (--). Commands can be run to do things like generate FX on the trigger, play a sound, ping the map etc. Each command should be entered on it's own line, any command that does not begin with a double dash (--) will be output to chat exactly as written, which means you can use this feature to trigger other mods commands. The following is a short description of each command native to Dungeon Trigger. You can access this help in the script with <b>!dt</b>.<br><br>
+  
   <ul>
   <lh>Conditional Checks</lh>
   <li><a href='#check/save'>--check:skill_abbreviation:dc:show</a></li>
-  <li>--save:stat:dc:show</li>
-  <li>--key:icon-name</li>
-  <li>--else</li>
-  <li>--end</li>
+  <li><a href='#check/save'>--save:stat:dc:show</a></li>
+  <li><a href='#key'>--key:icon-name</a></li>
+  <li><a href='#else'>--else</a></li>
+  <li><a href='#end'>--end</a></li>
   </ul>
-  
+<h4>How Conditions Work...</h4>
+When a trigger is activated the default executions state is TRUE until it encounters a conditional command which sets the state to FALSE, such as failing a check or not meeting the requirements for KEY. Each line can change depending on the command for example if a check was failed but the <code>--else</code> command is encountered it will filp flop the run state to the opposite which is now TRUE again. You can always use the <code>--end</code> command to set the state back to TRUE.
+<br>
+<br>
   <ul>
   <lh>Action Commands</lh>
   <li>--play:trackname</li>
@@ -86,4 +90,36 @@
   <em>Commands run on a successful check and the roll will be output to chat.</em><br /><strong>--end</strong><br /><br /><strong>--save:dex:15</strong><br /><em>Commands here run on a failed roll of 14 or lower with the tokens Dex Save bonus. </em><br /><strong>--end</strong><br /> <br /><strong>--check:perception:17:show</strong><br /><em>Commands here run on a 17 or better perception check and the players will see the roll because of the :show tag</em><br /><strong>--end</strong><br /><em>Commands here will run either way</em>
 <br>
 </td></tr>
+
+<tr><td><strong><h3 id='key'>KEY</h3></strong></td></tr>
+<tr><td>
+<b><code>--key:[icon_name]</span></code></b><br><br>You can use the --key command to designate the trigger target must have the selected status marker to activate.
+<br>
+Here are some examples:<br />
+<strong>--key:blue</strong><br /><em>Commands run if token has the blue dot status</em><br /><strong>--end</strong>
+<br>
+Some examples of icon names are red, blue, green, brown, purple, pink, yellow, dead, skull, sleepy, half-heart, half-haze, interdiction...<br>
+</td></tr>
+
+
+<tr><td><strong><h3 id='else'>ELSE</h3></strong></td></tr>
+<tr><td>
+<b><code>--else</code></b>
+<br>
+<br>
+The else command toggles the triggers run state to the opposite. A trigger always starts with a run state of TRUE which allows it to execute commands. If a condition fails like a <code>--check</code> command then that state becomes FALSE preventing commands from running. When the <code>--else</code> command is encountered it switches to the opposite run state. This can be used to run a separate set of commands in the even a conditon passes or fails.
+<br>
+<br>
+Here are some examples:<br />
+<strong>--check:perception:17:show</strong><br /><em>Commands here run on a 17 or better perception check and the players will see the roll because of the :show tag</em><br /><strong>--else</strong><br /><em>Commands here run on 16 or lower perception check, only the GM will see the roll.</em><br /><strong>--end</strong><br /><em>Commands here will run either way</em><br>
+</td></tr>
+
+<tr><td><strong><h3 id='end'>END</h3></strong></td></tr>
+<tr><td>
+<b><code>--end</code></b>
+<br>
+<br>
+Forces the run state of the trigger back to TRUE allowing all further commands to be executed as normal. This can be useful if you have a condition block but you also want additional commands to run either way.<br>
+</td></tr>
+
 </table>
