@@ -1,10 +1,12 @@
 <table cellpadding='0'><tbody>
 <tr><td><h2 id='top'>Dungeon Trigger</h2><i>Updated for Version 2.0.1</i><br><br></td></tr>
+<tr><td><strong>Required Dependancies</span></strong></td></tr>
+<tr><td><i>This mod also requires Token Collisions & its dependancies (available from Roll20 Library)</i><br><br></td></tr>
 <tr><td><strong>What this script does.</span></strong></td></tr>
 <tr><td><p>Dungeon Trigger allows you to take an object on the GM layer and aftering appending <b>_trig</b> to the object name you can add commands in the GM notes section and flags on the object itself to manipulate how it interacts with tokens that step on or move through it.</p>
 <p>Once a trigger is activated it essentially runs through the GM notes section line by line either running the command or outputting the text in chat, commands are prefaced with a double dash (--). Commands can be run to do things like generate FX on the trigger, play a sound, ping the map etc. Each command should be entered on it's own line, any command that does not begin with a double dash (--) will be output to chat exactly as written, which means you can use this feature to trigger other mods commands giving you an almost unlimited variety of combinations that you can do with triggers.</p>
 <p>The following is a short description of each command native to Dungeon Trigger. You can access this help in the script with <b>!dt</b>.</p>
-<p>Note that <code>:</code> must be used as a delimiter after (and between) commands with variables.</p>
+<p>Note that a colen <code>:</code> must be used as a delimiter after (and between) commands with variables.</p>
   
   <ul>
   <lh>Conditional Checks</lh>
