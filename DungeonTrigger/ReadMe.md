@@ -37,7 +37,7 @@ When a trigger is activated the default run state is TRUE until it encounters a 
     <ul><li>Delays the execution of below commands by X seconds.</li></ul>
   <li><a href='#door'>--door:[path_id]</a></li>
     <ul><li>Toggles a path segment between the Light & GM layers to simulate opening a door.</li></ul>
-  <li>--setstatus:status_name:ID</li>
+  <li><a href='#setstatus'>--setstatus:[status_name]:[id]</a></li>
   <li>--disable</li>
   <li>--gmlayer</li>
   <li>--note:message</li>
@@ -192,5 +192,16 @@ You can use the <b>--ping</b> command to ping the trigger location for all playe
 Here are some examples:<br />  
 <code> --door:-MEdyGrBrTtfBRxTdu34</code>
 </td></tr>
- 
+
+<tr><td><strong><h3 id='setstatus'>SETSTATUS</h3></strong><a href='#top'>back to top</a></td></tr>
+<tr><td>
+<b><code>--setstatus:(-)status_name:(token_id)</code></b>
+<br><br>
+<p>The <code><strong>--setstatus</strong></code> command will add the named status marker to the token, this command will work with custom status markers as well and is not case sensitive.</p>
+<p>OPTIONAL: You can put a - (minus) sign in front of the token name to indicate its removal rather than to add it and you can also specify the ID of another token to add/remove the status icon to.</p>
+Here are some examples:<br />  
+<code>--setstatus:blue</code> - sets the blue dot status marker<br>
+<code>--setstatus:-blue</code> - removes the blue dot status marker<br>
+<code>--setstatus:interdiction:-MEdjRby5d6K1sSI5nir</code> - sets the interdiction icon on another token object.<br>
+</td></tr>
 </table>
