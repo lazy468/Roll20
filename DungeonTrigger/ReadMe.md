@@ -1,14 +1,18 @@
 <table cellpadding='0'><tbody>
 <tr><td><h2>Dungeon Trigger</h2></td></tr>
 <tr><td><strong><span style='color: blue;'>What this script does.</span></strong><hr style='border: 1px dashed #000; width: 50%  margin: auto; margin-top: 5%; margin-bottom: 5%;'>
-<tr><td>Dungeon Trigger allows you to take an object on the GM layer and aftering appending <b>_trig</b> to the object name you can add commands in the GM notes section and flags on the object itself to manipulate how it interacts with tokens that step on or move through it. It has a number of its own commands you can run to do things like generate FX on the trigger, play a sound, ping the map etc. Each command should be entered on it's own line, any command that does not begin with a double dash (--) will be output to chat exactly as written. The following is a short description of each command native to Dungeon Trigger. You can access this help in the script with <b>!dt</b>.<br><br>
+<tr><td>Dungeon Trigger allows you to take an object on the GM layer and aftering appending <b>_trig</b> to the object name you can add commands in the GM notes section and flags on the object itself to manipulate how it interacts with tokens that step on or move through it. It has a number of its own commands you can run to do things like generate FX on the trigger, play a sound, ping the map etc. Each command should be entered on it's own line, any command that does not begin with a double dash (--) will be output to chat exactly as written. The following is a short description of each command native to Dungeon Trigger. You can access this help in the script with <b>!dt</b>.<br><br> 
   <ul>
-  <li>--check</li>
-  <li>--save</li>
+  <lh>Conditional Checks</lh>
+  <li>--check:skill_abbreviation:dc:show<</li>
   <li>--save:stat:dc:show</li>
   <li>--key:icon-name</li>
   <li>--else</li>
   <li>--end</li>
+  </ul>
+  
+  <ul>
+  <lh>Action Commands</lh>
   <li>--play:trackname</li>
   <li>--fx:style-type:direction</li>
   <li>--ping</li>
