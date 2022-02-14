@@ -133,6 +133,8 @@ Forces the run state of the trigger back to TRUE allowing all further commands t
 
 <tr><td><strong><h3 id='play'>PLAY</h3></strong><a href='#top'>back to top</a></td></tr>
 <tr><td>
-  <b><code>--play:[track_name]</code></b><br><br>You can use the <code>--play</code> command to play a sound / track from your library. You must specify the exact track name. An example would be...<code><strong>--play:pit_trap </strong></code>which would play the sound by the name pit_trap from your audio library.<br>
+  <b><code>--play:[track_name]</code></b><br><br>You can use the <code>--play</code> command to play a sound / track from your library. You must specify the exact track name. 
+  Here are some examples:<br />
+  <code><strong>--play:pit_trap </strong></code>which would play the sound by the name pit_trap from your audio library.<br>
 </td></tr>
 </table>
