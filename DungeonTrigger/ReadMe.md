@@ -52,10 +52,10 @@ When a trigger is activated the default run state is TRUE until it encounters a 
   </ul>
   </td></tr>
 <tr><td>Chat Commands:<br><ul><li>!dt - displays the command help menu</li><li>!dt --id - returns the ID of the selected object in chat</li><li>!dt --activate - used for activating a trigger marked as manual with the padlock icon, triggered from a token overlapping the trigger</li></ul></td></tr>
-<tr><td><strong><span style='color: blue;'>Creating a Trigger</span></strong></td></tr>
-<tr><td>Place an object on the GM layer and post tag it with <span style='color: green;'><strong>_trig</strong></span>, for example door_trig would be a valid name.<br></td></tr>
+<tr><td><strong>Creating a Trigger</strong></td></tr>
+<tr><td>Place an object on the GM layer and post tag it with <code><strong>_trig</strong></code>, for example door_trig would be a valid name.<br></td></tr>
 <tr><td><strong>Trigger Actions</strong></td></tr>
-<tr><td>In the GM Notes section of the trigger you may type any number of commands each on their own line. All Dungeon Trigger specific commands being with a double dash -- however you may use commands for other API mods as well and these will be output to chat. You can insert <code><strong>VICTIM_ID</strong></code> into the line which will be replaced with the ID of the token who stepped on the trigger and inserting <span style='color: red;'><strong>VICTIM_NAME</strong></span> into the line will replace it with the tokens name. The insert tags can be useful when you need to send the player ID or name to another mod or you can use them in normal commands, for example you could use <span style='color: #000080;'><strong>/w VICTIM_NAME You notice a trap!</strong></span> to whisper only the player who steps on the trigger.<br> You can also insert the variables of the last check or save with <span style='color: red;'><strong>LAST_ROLL</strong></span>, <span style='color: red;'><strong>LAST_BONUS</strong></span>, or <span style='color: red;'><strong>LAST_DC</strong></span> which will output the corrosponding values for the last check or save that was rolled.</td></tr>
+<tr><td>In the GM Notes section of the trigger you may type any number of commands each on their own line. All Dungeon Trigger specific commands being with a double dash -- however you may use commands for other API mods as well and these will be output to chat. You can insert <code><strong>VICTIM_ID</strong></code> into the line which will be replaced with the ID of the token who stepped on the trigger and inserting <code><strong>VICTIM_NAME</strong></code> into the line will replace it with the tokens name. The insert tags can be useful when you need to send the player ID or name to another mod or you can use them in normal commands, for example you could use <code><strong>/w VICTIM_NAME You notice a trap!</strong></code> to whisper only the player who steps on the trigger.<br> You can also insert the variables of the last check or save with <code><strong>LAST_ROLL</strong></code>, <code><strong>LAST_BONUS</strong></code>, or <code><strong>LAST_DC</strong></code> which will output the corrosponding values for the last check or save that was rolled.</td></tr>
 <tr><td><strong><span style='color: blue;'>Activating a Trigger</span></strong></td></tr>
 <tr><td>Any token pathing across the square a trigger occupies will cause it to run the code in the GM Notes section. If you want the trigger to activate only if a token lands directly on it flag the trigger with the Boot Icon <img src='https://game-icons.net/icons/ffffff/000000/1x1/lorc/tread.png' alt='Boot' width='20' height='20' />.<br></td></tr>
 <tr><td><strong><span style='color: blue;'>Manual Activation</span></strong></td></tr>
@@ -101,6 +101,7 @@ When a trigger is activated the default run state is TRUE until it encounters a 
 <tr><td><strong><h3 id='key'>KEY</h3></strong></td></tr>
 <tr><td>
 <b><code>--key:[icon_name]</span></code></b><br><br>You can use the --key command to designate the trigger target must have the selected status marker to activate.
+<br>
 <br>
 Here are some examples:<br />
 <strong>--key:blue</strong><br /><em>Commands run if token has the blue dot status</em><br /><strong>--end</strong>
