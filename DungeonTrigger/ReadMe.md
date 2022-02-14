@@ -33,8 +33,10 @@ When a trigger is activated the default run state is TRUE until it encounters a 
     <ul><li>Displays an effect (or custom effect) when triggered.</li></ul>
   <li><a href='#ping'>--ping</a></li>
     <ul><li>Pings the map at the trigger location for all players.</li></ul>
-  <li>--delay:seconds</li>
-  <li>--door:path_id</li>
+  <li><a href='#delay'>--delay:[seconds]</a></li>
+    <ul><li>Delays the execution of below commands by X seconds.</li></ul>
+  <li><a href='#door'>--door:[path_id]</a></li>
+    <ul><li>Toggles a path segment between the Light & GM layers to simulate opening a door.</li></ul>
   <li>--setstatus:status_name:ID</li>
   <li>--disable</li>
   <li>--gmlayer</li>
@@ -165,7 +167,30 @@ Here are some examples:<br />
 
 <tr><td><strong><h3 id='ping'>PING</h3></strong><a href='#top'>back to top</a></td></tr>
 <tr><td>
-<b><code>--ping</code></b><br>You can use the <b>--ping</b> command to ping the trigger location for all players to see.<br>
+<b><code>--ping</code></b>
+<br>
+<br>
+You can use the <b>--ping</b> command to ping the trigger location for all players to see.<br>
 </td></tr>
 
+<tr><td><strong><h3 id='delay'>DELAY</h3></strong><a href='#top'>back to top</a></td></tr>
+<tr><td><b><code>--delay:[seconds]</code></b>
+<br>
+<br>
+<p>You can use the <code>--delay</code> command to pause the execution of the commands that follow by x seconds.</p>
+<p>It's important to note that <code>--delay</code> has no effect on the <code>--halt</code> or <code>--disable</code> command.</p>
+<p><code><strong>--delay:5</strong></code> will insert a 5 second delay before executing proceeding commands, if you only want a small subset of commands delayed then you should insert a <code>--delay:0</code> command at the end of the block to disable the delay for the rest of the commands.</p>
+</td></tr>
+
+<tr><td><strong><h3 id='door'>DOOR</h3></strong><a href='#top'>back to top</a></td></tr>
+<tr><td>
+<b><code>--door:[path_id]</code></b>
+<br>
+<p>You can use the <code>--door</code> command to toggle a path object between the dynamic lighting and GM layer. The path will be toggeled to the opposite layer each time the <code>--door</code> command is triggered.</p>
+<p>You must supply the ID of the path object in the door command, you can find this by using the command <code>!dt --id</code> while you have the path selected.</p>
+<p>This is useful for automatically opening dynamic lighting areas to players or marking the trigger with a padlock icon to allow players to activate it themselves with the <code>!dt --activate</code> command. I like to make an "Action" macro for my players with the command in it.</p>
+Here are some examples:<br />  
+<code> --door:-MEdyGrBrTtfBRxTdu34</code>
+</td></tr>
+ 
 </table>
