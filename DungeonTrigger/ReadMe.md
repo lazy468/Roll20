@@ -55,13 +55,11 @@
 <tr><td>If you mark a trigger with the wing status marker <img src='https://game-icons.net/icons/ffffff/000000/1x1/lorc/fluffy-wing.png' alt='fluffy-wing' width='20' height='20' /> then any token also marked with the wing status marker will be ignored by the trigger.<br></td></tr>
 </td></tr>
 </tbody></table>
-
+<br><br>
 <table cellpadding='0'><tbody>
 <tr><td><h2>Command Details</h2></td></tr>
   <tr><td>
-  <h3>Check/Save<b3><br>
  <tr><td><strong><span style='color: blue;'>CHECK / SAVE</span></strong></td></tr>
   <tr><td><b><code><span style='color: #903;'>--check:[skill/stat]:[DC]:show</span></code></b><br><b><code><span style='color: #903;'>--save:[stat]:[DC]:show</span></code></b><br><br>You can create conditions under which your commands will execute using --check, --save, or --key commands. A check can use any of the following to pull the bonus from the triggering characters stat block and roll against the set DC. Its important to note that the conditional code after a --check command triggers on a check success where a --save triggers on a failure. Typically checks and saves are hidden and only shown to the GM however if you append <span style='color: #800000;'><strong>:show</strong></span> at the end the command the roll will be shown in public chat when the condition would trigger.<ul><li><span style='color: blue;'>acrobatics</span> Acrobatics Check</li><li><span style='color: blue;'>athletics</span> Athletics Check</li><li><span style='color: blue;'>pperception</span> Passive Perception (no roll)</li><li><span style='color: blue;'>perception</span> Perception Check</li><li><span style='color: blue;'>investigation</span> Investigation Check</li><li><span style='color: blue;'>stealth</span> Stealth Check</li><li><span style='color: blue;'>str</span> Str Check / Save</li><li><span style='color: blue;'>dex</span> Dex Check / Save</li><li><span style='color: blue;'>con</span> Con Check / Save</li><li><span style='color: blue;'>int</span> Int Check / Save</li><li><span style='color: blue;'>wis</span> Wis Check / Save</li><li><span style='color: blue;'>cha</span> Cha Check / Save</li></ul>Here are some examples:<br /><strong>--check:[SKILL/STAT]:[DC]:show</strong><br /><em>Commands run on a successful check and the roll will be output to chat.</em><br /><strong>--end</strong><br /><br /><strong>--save:dex:15</strong><br /><em>Commands here run on a failed roll of 14 or lower with the tokens Dex Save bonus. </em><br /><strong>--end</strong><br /> <br /><strong>--check:perception:17:show</strong><br /><em>Commands here run on a 17 or better perception check and the players will see the roll because of the :show tag</em><br /><strong>--end</strong><br /><em>Commands here will run either way</em><br>
   </td></tr>
 </table>
-  
