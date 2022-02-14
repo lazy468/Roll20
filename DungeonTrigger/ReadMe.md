@@ -4,7 +4,7 @@
 <tr><td>Dungeon Trigger allows you to take an object on the GM layer and aftering appending <b>_trig</b> to the object name you can add commands in the GM notes section and flags on the object itself to manipulate how it interacts with tokens that step on or move through it. It has a number of its own commands you can run to do things like generate FX on the trigger, play a sound, ping the map etc. Each command should be entered on it's own line, any command that does not begin with a double dash (--) will be output to chat exactly as written. The following is a short description of each command native to Dungeon Trigger. You can access this help in the script with <b>!dt</b>.<br><br> 
   <ul>
   <lh>Conditional Checks</lh>
-  <li>--check:skill_abbreviation:dc:show<</li>
+  <li>--check:skill_abbreviation:dc:show</li>
   <li>--save:stat:dc:show</li>
   <li>--key:icon-name</li>
   <li>--else</li>
@@ -24,7 +24,22 @@
   <li>--note:message</li>
   <li>--halt</li>
   <li>--move:dir:dis</li>
-  </ul><br></td></tr>
+  </ul><br>
+  
+  <ul>
+    <lh>Text Replacers</lh>
+    <li>VICTIM_NAME - Replaces with the name of the triggering token</li>
+    <li>VICTIM_ID - Replaces with the ID of the triggering token</li>
+    <li>LAST_ROLL - Replaces with the value of the last check/save roll</li>
+    <li>LAST_DC - Replaces with the value of the last DC check/save</li>
+    <li>LAST_BONUS - Replaces with the last bonus check/save</li>
+  </ul><br>
+  Because lines not marked with double dash (--) are directly output to game chace you can use replacers to do things like send whispers to specific players or even trigger other mod commands such as...
+  <ul>
+  <li>/w VICTIM_NAME You notice a trap! - will whisper the user who triggered the action</li>
+  <li>!someAPI VICTIM_ID - would trigger another api with the ID of the triggering token</li>
+  </ul>
+  </td></tr>
 <tr><td>Commands:<br><ul><li>!dt - displays the command help menu</li><li>!dt --id - returns the ID of the selected object in chat</li><li>!dt --activate - used for activating a trigger marked as manual with the padlock icon, triggered from a token overlapping the trigger</li></ul></td></tr>
 <tr><td><strong><span style='color: blue;'>Creating a Trigger</span></strong><hr style='border: 1px dashed #000; width: 50%  margin: auto; margin-top: 5%; margin-bottom: 5%;'></td></tr>
 <tr><td>Place an object on the GM layer and post tag it with <span style='color: green;'><strong>_trig</strong></span>, for example door_trig would be a valid name.<br></td></tr>
