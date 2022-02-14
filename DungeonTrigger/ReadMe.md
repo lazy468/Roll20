@@ -1,4 +1,6 @@
 <table cellpadding='0'><tbody>
+<tr><td><h2>Dungeon Trigger</h2></td></tr>
+<tr><td>Commands:<br><ul><li>!dt - displays the command help menu</li><li>!dt --id - returns the ID of the selected object in chat</li><li>!dt --activate - used for activating a trigger marked as manual with the padlock icon, triggered from a token overlapping the trigger</li></ul></td></tr>
 <tr><td><strong><span style='color: blue;'>Creating a Trigger</span></strong><hr style='border: 1px dashed #000; width: 50%  margin: auto; margin-top: 5%; margin-bottom: 5%;'></td></tr>
 <tr><td>Place an object on the GM layer and post tag it with <span style='color: green;'><strong>_trig</strong></span>, for example door_trig would be a valid name.<br></td></tr>
 <tr><td><strong><span style='color: blue;'>Trigger Actions</span></strong><hr style='border: 1px dashed #000; width: 50%  margin: auto; margin-top: 5%; margin-bottom: 5%;'></td></tr>
