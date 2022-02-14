@@ -147,8 +147,8 @@ Forces the run state of the trigger back to TRUE allowing all further commands t
 <br>
 Play FX at the point of the trigger, you may play custom FX as well. The format of the command is as follows...
 <br>
-<br>
 <code><strong>--fx:style-type:direction</strong></code>
+<br>
 <br>
 Direction is optional, if it's an effect with 2 points then enter it as a compass direction of N S E W or NE SW etc. Custom effects are entered as the exact name of the custom FX.
 <br>
