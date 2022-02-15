@@ -201,7 +201,7 @@ Here are some examples:<br />
 
 <tr><td><strong><h3 id='setstatus'>SETSTATUS</h3></strong><a href='#top'>back to top</a></td></tr>
 <tr><td>
-<b><code>--setstatus:(-)status_name:(token_id)</code></b>
+<b><code>--setstatus:(-)[status_name]:(token_id)</code></b>
 <br><br>
 <p>The <code><strong>--setstatus</strong></code> command will add the named status marker to the token, this command will work with custom status markers as well and is not case sensitive.</p>
 <p>OPTIONAL: You can put a - (minus) sign in front of the token name to indicate its removal rather than to add it and you can also specify the ID of another token to add/remove the status icon to.</p>
@@ -241,7 +241,7 @@ The <code><strong>--halt</strong></code> command once executed will stop a token
   
 <tr><td><strong><h3 id='move'>MOVE</h3></strong><a href='#top'>back to top</a></td></tr>
 <tr><td>
-<b><code>--move:dir:dist</code></b>
+<b><code>--move:[dir]:[dist]</code></b>
 <br><br>
 The <code><strong>--move</strong></code> is similar to the halt command it will stop a token on the trigger and then reposition it in the distance and direction you specify. For example using <code><strong>--move:ne:3</strong></code> will stop a token on the trigger then move it 3 squares to the north east. This command also follows the same rules as <code><strong>--halt</strong></code> in that it will not activae any other triggers once it hits a move command and it will not recognize a <code><strong>--delay</strong></code> command.<br>
 </td></tr>
