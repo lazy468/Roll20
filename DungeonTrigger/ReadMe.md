@@ -39,11 +39,16 @@ When a trigger is activated the default run state is TRUE until it encounters a 
     <ul><li>Toggles a path segment between the Light & GM layers to simulate opening a door.</li></ul>
   <li><a href='#setstatus'>--setstatus:[status_name]:[id]</a></li>
     <ul><li>Set/Remove status markers from triggering or specified tokens.</li></ul>
-  <li>--disable</li>
-  <li>--gmlayer</li>
-  <li>--note:message</li>
-  <li>--halt</li>
-  <li>--move:dir:dis</li>
+  <li><a href='#disable'>--disable</a></li>
+    <ul><li>Marks the trigger with Interdiction (stop sign) which disables it.</li></ul>
+  <li><a href='#gmlayer'>--gmlayer</a></li>
+    <ul><li>Moves the triggering token to the GM layer.</li></ul>
+  <li><a href='#note'>--note:[message]</a></li>
+    <ul><li>Formats the message with bubble in the chat output for emphasis to players.</li></ul>
+  <li><a href='#note'>--halt</a></li>
+    <ul><li>Stop a token on the trigger point prevent any further movement.</li></ul>
+  <li><a href='#note'>--move:[dir]:[dis]</a></li>
+    <ul><li>Similar to halt with the added effect to move the token after triggering distance and direction.</li></ul>
   </ul>
   
   <ul>
@@ -204,5 +209,40 @@ Here are some examples:<br />
 <code>--setstatus:blue</code> - sets the blue dot status marker<br>
 <code>--setstatus:-blue</code> - removes the blue dot status marker<br>
 <code>--setstatus:interdiction:-MEdjRby5d6K1sSI5nir</code> - sets the interdiction icon on another token object.<br>
+</td></tr>
+
+<tr><td><strong><h3 id='disable'>DISABLE</h3></strong><a href='#top'>back to top</a></td></tr>
+<tr><td>
+<b><code>--disable</code></b>
+<br><br>
+The <code><strong>--disable</strong></code> command will disable the trigger by marking it with the Interdiction icon after being successfully run. This is useful if you only want a trigger to run once.<br>
+</td></tr>
+
+<tr><td><strong><h3 id='gmlayer'>GMLAYER</h3></strong><a href='#top'>back to top</a></td></tr>
+<tr><td>
+<b><code>--gmlayer</code></b>
+<br><br>
+The <code><strong>--gmlayer</strong></code> command will send the triggering token to the GM Layer.<br>
+</td></tr>
+
+<tr><td><strong><h3 id='note'>NOTE</h3></strong><a href='#top'>back to top</a></td></tr>
+<tr><td>
+<b><code>--note:[message]</code></b>
+<br><br>
+The <code><strong>--note</strong></code> command is just a visual effect which outputs a message in chat inside a bubble for emphasis to players.<br>
+</td></tr>
+
+<tr><td><strong><h3 id='halt'>HALT</h3></strong><a href='#top'>back to top</a></td></tr>
+<tr><td>
+<b><code>--halt</code></b>
+<br><br>
+The <code><strong>--halt</strong></code> command once executed will stop a token on the trigger even if they move past it. Its important to note that in the event a token paths across multiple triggers once a halt is executed no other triggers are processed.<br>
+</td></tr>
+  
+<tr><td><strong><h3 id='move'>MOVE</h3></strong><a href='#top'>back to top</a></td></tr>
+<tr><td>
+<b><code>--move:dir:dist</code></b>
+<br><br>
+The <code><strong>--move</strong></code> is similar to the halt command it will stop a token on the trigger and then reposition it in the distance and direction you specify. For example using <code><strong>--move:ne:3</strong></code> will stop a token on the trigger then move it 3 squares to the north east. This command also follows the same rules as <code><strong>--halt</strong></code> in that it will not activae any other triggers once it hits a move command and it will not recognize a <code><strong>--delay</strong></code> command.<br>
 </td></tr>
 </table>
